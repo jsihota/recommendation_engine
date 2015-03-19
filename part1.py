@@ -69,13 +69,31 @@ Complete these after reading the project description.
 
 # Finds the Pearson Correlation Similarity Measure between two users
 def pcs(x, y):
-    # YOUR_CODE_HERE
-    return 0.0
+    movies={}
+    for movie in rating[x]:
+                if movie in rating[y]: movies[movie]=1
+    noOfMovies=len(movies)
+    if noOfMovies==0: return 0
+    sum1=sum([rating[x][movie] for movie in movies])
+    sum2=sum([rating[y][movie] for movie in movies])
+    sum1Sq=sum([pow(rating[x][movie],2) for movie in movies])
+    sum2Sq=sum([pow(rating[y][movie],2) for movie in movies])
+    pSum=sum([rating[x][movie]*rating[y][movie] for movie in movies])
+    num=pSum-(sum1*sum2/noOfMovies)
+    den=sqrt((sum1Sq-pow(sum1,2)/noOfMovies)*(sum2Sq-pow(sum2,2)/noOfMovies))
+    if den==0: return 0
+    r=num/den
+    return r
 
 # Guesses the ratings that user with id, user_id, might give to item with id, i_id.
 # We will consider the top_n similar users to do this. Use top_n as 3 in this example.
 def guess(user_id, i_id, top_n):
-    # YOUR_CODE_HERE
+    # http://xebee.xebia.in/index.php/2014/02/10/recommendation-engine-in-python-using-pearson-correlation-similarity/
+     total={}
+     similaritySum = {}
+     for other in rating
+         if(other == user_id): continue
+         similarity = pcs(user_id,other)
     return 0.0
 
 """
