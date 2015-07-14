@@ -89,11 +89,12 @@ def pcs(x, y):
 # We will consider the top_n similar users to do this. Use top_n as 3 in this example.
 def guess(user_id, i_id, top_n):
     # http://xebee.xebia.in/index.php/2014/02/10/recommendation-engine-in-python-using-pearson-correlation-similarity/
-     total={}
-     similaritySum = {}
-     for other in rating
-         if(other == user_id): continue
-         similarity = pcs(user_id,other)
+     # total={}
+     # similaritySum = {}
+     # for other in rating
+     #     if(other == user_id): continue
+     #     similarity = pcs(user_id,other)
+     #     if(similarity<=0): continue
     return 0.0
 
 """
